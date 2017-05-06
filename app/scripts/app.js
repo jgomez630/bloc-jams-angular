@@ -1,10 +1,14 @@
+/*Providers: are services used by Angular modules to configure behavior*/     
 (function() {
      function config($stateProvider, $locationProvider) {
-      $locationProvider
+/*$locationProvider: configure the URLs in the browser*/
+       $locationProvider
          .html5Mode({
              enabled: true,
              requireBase: false
          });
+
+/*$stateProvider: configures state behavior*/       
       $stateProvider
          .state('landing', {
              url: '/',
@@ -20,9 +24,12 @@
      });     
     }
 
-//    module  app-name  dependencies
+/* 'blocJams' is the main Angular root module. The ui-router is an external module injected as a dependency */
   angular
     .module('blocJams',['ui.router'])
+/* the config() function makes sure providers(services) are accessible thru out the ng-app*/    
     .config(config);
 
 })();
+/*  ui.router is used to display templates "states" when a user navigates 
+ to a specific route  */

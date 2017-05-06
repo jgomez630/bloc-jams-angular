@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--Link blocJams ng module to html root element using 'ng-app' directive-->
 <html ng-app="blocJams">
  <head lang="en">
    <meta charset="UTF-8">
@@ -24,7 +25,8 @@
          <a ui-sref='collection' class="navbar-link">collection</a>
      </div>
   </nav>
-
+<!-- index.html is acting as the global file for this site-->
+<!--tells Angular where to put html template via the UI-Router-->
 <ui-view></ui-view>
 
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
