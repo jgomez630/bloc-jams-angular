@@ -12,10 +12,12 @@
       $stateProvider
          .state('landing', {
              url: '/',
-             templateUrl: '/templates/landing.html'
+            controller: 'LandingCtrl as landing',  
+            templateUrl: '/templates/landing.html'
       })
       .state('collection', {
              url: '/collection',
+            controller: 'CollectionCtrl as collection',
              templateUrl: '/templates/collection.html'
       })
          .state('album', {
