@@ -1,7 +1,7 @@
  (function() {
-     function SongPlayer() {
-          var SongPlayer = {};
-       
+    function SongPlayer() {
+     var SongPlayer = {};
+// var currentSong is used to check if current song playing is != song user clicks on 
      var currentSong = null;
  /**
  * @desc Buzz object audio file
@@ -13,7 +13,7 @@
  * @desc Stops currently playing song and loads new audio file as currentBuzzObject
  * @param {Object} song
  */   
-       var setSong = function(song) {
+  var setSong = function(song) {
     if (currentBuzzObject) {
         currentBuzzObject.stop();
         currentSong.playing = null;
@@ -27,11 +27,11 @@
     currentSong = song;
  };
        
-         SongPlayer.play = function(song) {
-          if (currentSong !== song) {
+      SongPlayer.play = function(song) {
+        if (currentSong !== song) {
           setSong(song);
-      currentBuzzObject.play();
-         song.playing = true;      
+          currentBuzzObject.play();
+          song.playing = true;      
             
        } else if (currentSong === song) {
          if (currentBuzzObject.isPaused()) {
