@@ -26,16 +26,23 @@
  
     currentSong = song;
  };
-       
+      // playSong
+  var playSong = function(){
+     currentBuzzObject.play();
+      song.playing = true;
+   }
+      
       SongPlayer.play = function(song) {
         if (currentSong !== song) {
           setSong(song);
-          currentBuzzObject.play();
+          /* currentBuzzObject.play(); */
+          playSong();
           song.playing = true;      
             
        } else if (currentSong === song) {
          if (currentBuzzObject.isPaused()) {
-             currentBuzzObject.play();
+              /*currentBuzzObject.play(); */
+           playSong();
          }
      }        
   
@@ -47,7 +54,8 @@
  };      
        return SongPlayer;
 }
- 
+
+   
      angular
          .module('blocJams')
          .factory('SongPlayer', SongPlayer);
